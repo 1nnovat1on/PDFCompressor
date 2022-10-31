@@ -18,17 +18,22 @@ def main(fileName = None, outputName = None):
         outputName = outputName
     
     else:
-        outputName = fileName.replace(".pdf", "COMPRESSED_FILE.pdf")
+        outputName = fileName.replace(".pdf", "_COMPRESSED_FILE.pdf")
 
     print(fileName)
 
     size = os.path.getsize(fileName)
     print (size)
-    #226613869 - this is how many bytes Albany is
+    #226613869 - this is how many bytes my example file was
     #20000000 - this is the 20 mb limit for emails in outlook
+    
     if size >= 20000000:
         print("COMPRESSING... ")
-        arg1 = '-sOutputFile=' + outputName 
+        arg1 = '-sOutputFile=' + outputName
+        
+        # Must point to your GhostScript executable
+        # This is actually powershell
+        
         p = subprocess.Popen(['C:/Program Files/gs/gs9.56.0/bin/gswin64c.exe',
                             '-sDEVICE=pdfwrite', 
                             '-dCompatibilityLevel=1.4',     
