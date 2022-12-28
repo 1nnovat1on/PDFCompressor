@@ -4,6 +4,6 @@ A module that will automatically compress your pdfs. Put it in your applications
 
 * Install GhostScript from https://ghostscript.com/releases/gsdnld.html
 
-* Point the code to your executable
+* Point the code to your GS executable
 
 * Compress your PDFs for easy PDF emailing
